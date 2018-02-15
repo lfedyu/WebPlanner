@@ -1,4 +1,4 @@
-package com.epam.webPlanner.services;
+package com.epam.webPlanner;
 
 import com.epam.webPlanner.controllers.MainConrtoller;
 import org.springframework.boot.SpringApplication;
@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackageClasses = MainConrtoller.class)
+//@ComponentScan(basePackageClasses = MainConrtoller.class)
 public class WebPlannerApplication {
 
 	public static void main(String[] args) {
