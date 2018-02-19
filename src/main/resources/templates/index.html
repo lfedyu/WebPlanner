@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{fragments/layout}">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Welcome on WebPlanner</title>
+    <!--<link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"-->
+          <!--rel="stylesheet">-->
+</head>
+<body>
+
+<div layout:fragment="content" th:remove="tag">
+
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h1>Welcome page</h1>
+            <p th:text="'Date-time: ' + ${time} + '!'" />
+            <p th:text="'Message: ' + ${message} + '!'" />
+        </div>
+    </div>
+    <!--<p><a href="/" th:href="@{/login}">Log in</a></p>-->
+    <!--<script src="webjars/jquery/1.9.1/jquery.min.js"></script>-->
+    <!--<script src="webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
+
+</div>
+</body>
+
+
+</html>
