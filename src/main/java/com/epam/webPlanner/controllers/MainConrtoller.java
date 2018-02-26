@@ -16,28 +16,12 @@ public class MainConrtoller {
     @Value("${application.message}")
     private String message = "Hi there!";
 
-    @GetMapping("/index")
+    @GetMapping("/")
     public String index(Map<String, Object> model){
         model.put("time", new Date());
         model.put("message", this.message );
         return "index";
     }
 
-    @GetMapping("/login")
-    public String login() {
-        return "login";
-    }
-
-
-    @GetMapping("/access-denied")
-    public String accessDenied() {
-        return "access-denied";
-    }
-
-    /*@PreAuthorize("hasAnyRole('ADMIN')")
-    @GetMapping("/admin")
-    public String admin() {
-        return "admin";
-    }*/
 
 }
