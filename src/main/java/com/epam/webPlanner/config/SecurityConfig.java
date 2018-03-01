@@ -43,6 +43,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                 .logoutSuccessUrl("/login?logout")
                 .permitAll();
+
+        http.headers().cacheControl().disable();
     }
     //switch inMemoryAuthentication() to authenticationProvider() and make your authenticationProvider to take a data from database
     @Override
