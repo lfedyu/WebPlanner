@@ -18,7 +18,7 @@ public class CacheFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletResponse httpResp = (HttpServletResponse) servletResponse;
         httpResp.setHeader("Cache-Control", "max-age=600");
-
+        filterChain.doFilter(servletRequest, servletResponse);
 
     }
 
