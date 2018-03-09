@@ -35,5 +35,11 @@ public class UserControllerIntegrationTest {
 
     @Test
     public void getAll() {
+        /*mockMvc.perform(get("/users/")
+            .contentType(MediaType.APPLICATION_JSON))
+        .andExpect(status().isOk())
+        .andExpect(jsonPath("user", hasSize(2)))
+        .andExpect(jsonPath("user[0].userName", is("lil2210")));*/
+
     }
 }
