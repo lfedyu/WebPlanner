@@ -1,20 +1,17 @@
 package com.epam.webPlanner;
 
 import com.epam.webPlanner.beans.User;
-import com.epam.webPlanner.controllers.MainConrtoller;
-import com.epam.webPlanner.repositories.UsersRepository;
+import com.epam.webPlanner.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 public class WebPlannerApplication implements CommandLineRunner {
 
 	@Autowired
-	private UsersRepository repository;
+	private UserRepository repository;
 
 
 	public static void main(String[] args) {
