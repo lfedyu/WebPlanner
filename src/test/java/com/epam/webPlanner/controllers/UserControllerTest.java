@@ -28,9 +28,9 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 public class UserControllerTest {
     @InjectMocks
-    UserController userController;
+    private UserController userController;
     @Mock
-    UserService userService;
+    private UserService userService;
     List <User> usersResp;
 
     @Before
@@ -48,7 +48,7 @@ public class UserControllerTest {
         Mockito.when(userController.getAllUsers()).thenReturn(usersResp);
         List <User> result = userController.getAllUsers();
         Assert.assertEquals(usersResp,result);
-        Mockito.verify(userService, times(1)).getAllUsers();
+        Mockito.verify(userService).getAllUsers();
 
     }
 }
