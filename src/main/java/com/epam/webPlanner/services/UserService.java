@@ -1,14 +1,15 @@
 package com.epam.webPlanner.services;
 
 import com.epam.webPlanner.beans.User;
-import com.epam.webPlanner.repositories.UserRepository;
+import com.epam.webPlanner.repositories.UserRepositoryJpa;
+import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class UserService {
 
-private UserRepository userRepository;
+private UserRepositoryJpa userRepository;
     User user;
     List <User> users;
 

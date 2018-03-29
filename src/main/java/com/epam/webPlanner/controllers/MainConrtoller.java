@@ -1,11 +1,10 @@
 package com.epam.webPlanner.controllers;
 
+import com.epam.webPlanner.beans.UserBuilder;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.Date;
 import java.util.Map;
@@ -23,5 +22,10 @@ public class MainConrtoller {
         return "index";
     }
 
+    @GetMapping("/{userName}")
+    public String myPage(@PathVariable("userName") String userName, Map<String, Object> model){
+        model.put("userName", new UserBuilder().createUser().getUserName());
+        return "userPage";
+    }
 
 }
