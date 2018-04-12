@@ -1,10 +1,8 @@
 package com.epam.webPlanner.beans;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class User {
@@ -17,18 +15,21 @@ public class User {
     private String firstName;
     private String lastName;
     private String password;
-
+    @Column
+    @ElementCollection(targetClass=Plan.class)
+    private List<Plan> planList;
 
     public User() {
     }
-    //change to builder pattern
-    public User(Integer id, String username, String role, String firstName, String lastName, String password) {
+
+    public User(Integer id, String username, String role, String firstName, String lastName, String password, List<Plan> planList) {
         this.id = id;
         this.userName = username;
         this.role = role;
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
+        this.planList = planList;
     }
 
     public Integer getId() {

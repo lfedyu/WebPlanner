@@ -27,7 +27,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/img/**",
                         "/webjars/**").permitAll() //autorize requests that mathes user with role ADMIN
                 //.antMatchers("/**").hasRole("ADMIN")
-                //.anyRequest().authenticated() //and any requests that are authenticated
+                .anyRequest().authenticated() //and any requests that are authenticated
+                .and()
+                .authorizeRequests().antMatchers("/h2-console/**").permitAll()//only for h2, delete for production(dfp)
                 .and()
                 .exceptionHandling()
                 .accessDeniedHandler(accessDeniedHandler)
@@ -45,6 +47,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll();
 
         http.headers().cacheControl().disable();
+
+        //Disable CSRF protection(dfp)  https://springframework.guru/using-the-h2-database-console-in-spring-boot-with-spring-security/
+        http.csrf().disable();
+        //Disable X-Frame-Options in Spring Security(dfp)
+        http.headers().frameOptions().disable();
     }
     //switch inMemoryAuthentication() to authenticationProvider() and make your authenticationProvider to take a data from database
     @Override
