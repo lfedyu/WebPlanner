@@ -54,7 +54,7 @@ public class WebPlannerApplication implements CommandLineRunner {
             repository.save(new UserBuilder().setId(2).setUsername("mvovc").setRole("user").setFirstName("Marko").setLastName("Vovchok").setPassword("mvovc").createUser());
 
             // fetch all customers
-			log.info("Customers found with findAll():");
+			log.info("Users found with findAll():");
 			log.info("-------------------------------");
 			for (User user : repository.findAll()) {
 				log.info(user.toString());
@@ -71,7 +71,7 @@ public class WebPlannerApplication implements CommandLineRunner {
 					});
 
 			// fetch customers by last name
-			log.info("Customer found with findByFirstName('Liliya'):");
+			log.info("User found with findByFirstName('Liliya'):");
 			log.info("--------------------------------------------");
 			repository.findByFirstName("Liliya").forEach(lil -> {
 				log.info(lil.toString());

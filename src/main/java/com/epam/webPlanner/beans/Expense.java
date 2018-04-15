@@ -11,4 +11,7 @@ public class Expense {
     @Id
     private String name;
     private Integer cost;
+
+    public Expense() {
+    }
 }
