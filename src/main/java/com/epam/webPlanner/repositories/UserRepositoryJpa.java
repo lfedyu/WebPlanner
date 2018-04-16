@@ -11,4 +11,8 @@ public interface UserRepositoryJpa extends CrudRepository<User, Integer> {
     List<User> findAll();
     public List<User> findByFirstName(String firstName);
     public List<User> findByLastName(String lastName);
+    public void addUser (User user);
+    public void updateUser (Integer id, User user);
+    public void deleteUser (Integer id);
+
 }

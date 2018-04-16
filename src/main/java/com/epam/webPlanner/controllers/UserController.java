@@ -4,9 +4,7 @@ package com.epam.webPlanner.controllers;
 import com.epam.webPlanner.beans.User;
 import com.epam.webPlanner.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,8 +19,24 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/")
+    @GetMapping("/users")
     public List<User> getAllUsers(){
         return userService.getAllUsers();
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "users/")
+    public void addUser(@RequestBody User user ){
+        userService.addUser(user);
+    }
+
+
+    @RequestMapping(method = RequestMethod.PUT, value = "users/{id}")
+    public void updateUser(@RequestBody User user, @PathVariable Integer id ){
+        userService.updateUser(id, user);
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "users/{id}")
+    public void addUser(@PathVariable Integer id ){
+        userService.deleteUser(id);
     }
 }

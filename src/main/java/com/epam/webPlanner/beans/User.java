@@ -47,8 +47,15 @@ public class User {
     public String getLastName() {
         return lastName;
     }
- public String getPassword() {
+    public String getPassword() {
         return password;
+    }
+    public List<Plan> getPlanList() {
+        return planList;
+    }
+
+    public void setPlanList(List<Plan> planList) {
+        this.planList = planList;
     }
 
     @Override
@@ -60,6 +67,7 @@ public class User {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", password='" + password + '\'' +
+                ", planList=" + planList.toString() +
                 '}';
     }
 }

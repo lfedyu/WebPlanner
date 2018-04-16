@@ -9,6 +9,7 @@ import javax.persistence.Id;
 @Entity
 public class Expense {
     @Id
+    private Integer id;
     private String name;
     private Integer cost;
 
