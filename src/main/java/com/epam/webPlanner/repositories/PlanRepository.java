@@ -8,10 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface PlanRepositoryJpa extends CrudRepository<Plan, Integer> {
+public interface PlanRepository extends CrudRepository<Plan, Integer> {
     public Plan findById(Integer id);
-    List<Plan> findAllForUser(Integer id);
-    public void addPlan (Plan plan);
-    public void updatePlan (Integer id, Plan plan);
-    public void deletePlan (Integer id);
+    List<Plan> findByUserId(Integer userId);
 }

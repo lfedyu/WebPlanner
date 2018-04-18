@@ -1,13 +1,13 @@
 package com.epam.webPlanner.services;
 
 import com.epam.webPlanner.beans.Expense;
-import com.epam.webPlanner.repositories.ExpenseRepositoryJpa;
+import com.epam.webPlanner.repositories.ExpenseRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
 public class ExpenseService {
-    private ExpenseRepositoryJpa expenseRepository;
+    private ExpenseRepository expenseRepository;
     Expense expense;
 
     public List<Expense> getAllExpenses(){

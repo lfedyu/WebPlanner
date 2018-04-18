@@ -1,7 +1,5 @@
 package com.epam.webPlanner.beans;
 
-import org.springframework.data.mongodb.core.mapping.Document;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -16,6 +14,7 @@ public class Plan {
     @ElementCollection(targetClass=Expense.class)
     private List<Expense> expences;
     @ManyToOne
+    @JoinColumn(name = "USER_ID")
     private User user;
 
     public Plan() {

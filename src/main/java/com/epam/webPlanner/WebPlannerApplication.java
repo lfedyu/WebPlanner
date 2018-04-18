@@ -2,8 +2,7 @@ package com.epam.webPlanner;
 
 import com.epam.webPlanner.beans.User;
 import com.epam.webPlanner.beans.UserBuilder;
-import com.epam.webPlanner.repositories.UserRepositoryJpa;
-import com.epam.webPlanner.repositories.UserRepositoryMongo;
+import com.epam.webPlanner.repositories.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +17,7 @@ import java.util.Optional;
 public class WebPlannerApplication implements CommandLineRunner {
 
 	@Autowired
-	private UserRepositoryJpa repository;
+	private UserRepository repository;
 	//private UserRepositoryMongo repository;
     private static final Logger log = LoggerFactory.getLogger(WebPlannerApplication.class);
 
@@ -47,7 +46,7 @@ public class WebPlannerApplication implements CommandLineRunner {
 	}
 
 	@Bean
-	public CommandLineRunner demo(UserRepositoryJpa repository) {
+	public CommandLineRunner demo(UserRepository repository) {
 		return (args) -> {
 			// save a couple of customers
             repository.save(new UserBuilder().setId(1).setUsername("lil2210").setRole("admin").setFirstName("Liliya").setLastName("Fedyushko").setPassword("lil2210").createUser());

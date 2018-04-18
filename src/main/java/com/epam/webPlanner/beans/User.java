@@ -8,6 +8,7 @@ import java.util.List;
 public class User {
 
     @Id
+    @Column(name = "USER_ID")
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer id;
     private String userName;
@@ -15,7 +16,7 @@ public class User {
     private String firstName;
     private String lastName;
     private String password;
-    @Column
+
     @ElementCollection(targetClass=Plan.class)
     private List<Plan> planList;
 
@@ -50,6 +51,7 @@ public class User {
     public String getPassword() {
         return password;
     }
+    @OneToMany(cascade = CascadeType.ALL)
     public List<Plan> getPlanList() {
         return planList;
     }

@@ -32,7 +32,7 @@ public class UserController {
 
     @RequestMapping(method = RequestMethod.PUT, value = "users/{id}")
     public void updateUser(@RequestBody User user, @PathVariable Integer id ){
-        userService.updateUser(id, user);
+        userService.updateUser(user);
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "users/{id}")
