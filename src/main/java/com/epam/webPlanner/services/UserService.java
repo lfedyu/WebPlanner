@@ -3,25 +3,25 @@ package com.epam.webPlanner.services;
 import com.epam.webPlanner.beans.Plan;
 import com.epam.webPlanner.beans.User;
 import com.epam.webPlanner.repositories.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.Set;
 
 @Service
 public class UserService {
 
-private UserRepository userRepository;
-    User user;
+    @Autowired
+    private UserRepository userRepository;
 
-    public List<User> getAllUsers(){
+    public Set<User> getAllUsers(){
     return  userRepository.findAll();
     }
-    public List <Plan> getAllPlanesForUser (Integer userId){
-        return userRepository.findById(userId).getPlanList();
+    public Set<Plan> getAllPlanesForUser (Integer userId){
+        return userRepository.findById(userId).getPlanSet();
     }
     public User getUserById(Integer userId){
-        user = userRepository.findById(userId);
-        return user;
+        return userRepository.findById(userId);
     }
     public void addUser (User user){
         userRepository.save(user);

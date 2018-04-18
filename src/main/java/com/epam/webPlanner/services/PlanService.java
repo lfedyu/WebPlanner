@@ -3,16 +3,16 @@ package com.epam.webPlanner.services;
 import com.epam.webPlanner.beans.Plan;
 import com.epam.webPlanner.repositories.PlanRepository;
 import org.springframework.stereotype.Service;
+import java.util.HashSet;
+import java.util.Set;
 
-import java.util.ArrayList;
-import java.util.List;
 @Service
 public class PlanService {
 
     private PlanRepository planRepository;
 
-    public List<Plan> getAllPlansForUser(Integer userId){
-        List <Plan> plannes = new ArrayList<>();
+    public Set<Plan> getAllPlansForUser(Integer userId){
+        Set<Plan> plannes = new HashSet<>();
         planRepository.findByUserId(userId).
                 forEach(plannes::add);
         return plannes;

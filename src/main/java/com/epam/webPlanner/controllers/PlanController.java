@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 
 @RestController
 public class PlanController {
@@ -21,7 +22,7 @@ public class PlanController {
     }
 
     @GetMapping("/user/{id}/planes")
-    public List<Plan> getAllPlans(@PathVariable Integer id){
+    public Set<Plan> getAllPlans(@PathVariable Integer id){
         return planService.getAllPlansForUser(id);
     }
 

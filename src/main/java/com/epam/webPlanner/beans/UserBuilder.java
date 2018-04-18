@@ -1,6 +1,7 @@
 package com.epam.webPlanner.beans;
 
 import java.util.List;
+import java.util.Set;
 
 public class UserBuilder {
     private Integer id;
@@ -10,7 +11,7 @@ public class UserBuilder {
     private String lastName;
     private String password;
 
-    private List<Plan> planList;
+    private Set<Plan> planList;
 
     public UserBuilder setId(Integer id) {
         this.id = id;
@@ -42,7 +43,7 @@ public class UserBuilder {
         return this;
     }
 
-    public UserBuilder setPlanList(List<Plan> planList) {
+    public UserBuilder setPlanList(Set<Plan> planList) {
         this.planList = planList;
         return this;
     }

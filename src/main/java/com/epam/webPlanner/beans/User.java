@@ -1,8 +1,7 @@
 package com.epam.webPlanner.beans;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 public class User {
@@ -18,19 +17,19 @@ public class User {
     private String password;
 
     @ElementCollection(targetClass=Plan.class)
-    private List<Plan> planList;
+    private Set<Plan> planSet;
 
     public User() {
     }
 
-    public User(Integer id, String username, String role, String firstName, String lastName, String password, List<Plan> planList) {
+    public User(Integer id, String username, String role, String firstName, String lastName, String password, Set<Plan> planSet) {
         this.id = id;
         this.userName = username;
         this.role = role;
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
-        this.planList = planList;
+        this.planSet = planSet;
     }
 
     public Integer getId() {
@@ -52,12 +51,12 @@ public class User {
         return password;
     }
     @OneToMany(cascade = CascadeType.ALL)
-    public List<Plan> getPlanList() {
-        return planList;
+    public Set<Plan> getPlanSet() {
+        return planSet;
     }
 
-    public void setPlanList(List<Plan> planList) {
-        this.planList = planList;
+    public void setPlanSet(Set<Plan> planSet) {
+        this.planSet = planSet;
     }
 
     @Override
@@ -69,7 +68,7 @@ public class User {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", password='" + password + '\'' +
-                ", planList=" + planList.toString() +
+                ", planSet=" + planSet.toString() +
                 '}';
     }
 }

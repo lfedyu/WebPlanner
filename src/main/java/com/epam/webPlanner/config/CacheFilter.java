@@ -1,4 +1,4 @@
-package com.epam.webPlanner.beans;
+package com.epam.webPlanner.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
@@ -19,7 +19,6 @@ public class CacheFilter implements Filter {
         HttpServletResponse httpResp = (HttpServletResponse) servletResponse;
         httpResp.setHeader("Cache-Control", "max-age=600");
         filterChain.doFilter(servletRequest, servletResponse);
-
     }
 
     @Override
