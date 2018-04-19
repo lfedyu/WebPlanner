@@ -11,7 +11,7 @@ public class UserBuilder {
     private String lastName;
     private String password;
 
-    private Set<Plan> planList;
+    private List<Plan> planList;
 
     public UserBuilder setId(Integer id) {
         this.id = id;
@@ -43,7 +43,7 @@ public class UserBuilder {
         return this;
     }
 
-    public UserBuilder setPlanList(Set<Plan> planList) {
+    public UserBuilder setPlanList(List<Plan> planList) {
         this.planList = planList;
         return this;
     }

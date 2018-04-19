@@ -9,8 +9,8 @@ import java.util.Set;
 public interface UserRepository extends CrudRepository<User, Integer> {
 
     public User findById(Integer id);
-    Set<User> findAll();
-    public Set<User> findByFirstName(String firstName);
+    List<User> findAll();
+    public List<User> findByFirstName(String firstName);
 
 
 }

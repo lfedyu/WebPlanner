@@ -22,7 +22,7 @@ public class PlanController {
     }
 
     @GetMapping("/user/{id}/planes")
-    public Set<Plan> getAllPlans(@PathVariable Integer id){
+    public List<Plan> getAllPlans(@PathVariable Integer id){
         return planService.getAllPlansForUser(id);
     }
 

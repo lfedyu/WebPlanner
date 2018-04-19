@@ -1,6 +1,7 @@
 package com.epam.webPlanner.beans;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -17,19 +18,19 @@ public class User {
     private String password;
 
     @ElementCollection(targetClass=Plan.class)
-    private Set<Plan> planSet;
+    private List<Plan> planList;
 
     public User() {
     }
 
-    public User(Integer id, String username, String role, String firstName, String lastName, String password, Set<Plan> planSet) {
+    public User(Integer id, String username, String role, String firstName, String lastName, String password, List<Plan> planList) {
         this.id = id;
         this.userName = username;
         this.role = role;
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
-        this.planSet = planSet;
+        this.planList = planList;
     }
 
     public Integer getId() {
@@ -51,12 +52,12 @@ public class User {
         return password;
     }
     @OneToMany(cascade = CascadeType.ALL)
-    public Set<Plan> getPlanSet() {
-        return planSet;
+    public List<Plan> getPlanList() {
+        return planList;
     }
 
-    public void setPlanSet(Set<Plan> planSet) {
-        this.planSet = planSet;
+    public void setPlanList(List<Plan> planList) {
+        this.planList = planList;
     }
 
     @Override
@@ -68,7 +69,7 @@ public class User {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", password='" + password + '\'' +
-                ", planSet=" + planSet.toString() +
+                ", planList=" + planList.toString() +
                 '}';
     }
 }

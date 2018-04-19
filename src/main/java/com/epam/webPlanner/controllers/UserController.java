@@ -8,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Set;
-
 @RestController
 public class UserController {
 
@@ -21,7 +19,7 @@ public class UserController {
     }
 
     @GetMapping("/users")
-    public Set<User> getAllUsers(){
+    public List<User> getAllUsers(){
         //userService.addUser(new UserBuilder().setId(1).setUsername("lil2210").setRole("admin").setFirstName("Liliya").setLastName("Fedyushko").setPassword("lil2210").createUser());
         return userService.getAllUsers();
     }
