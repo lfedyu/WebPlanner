@@ -24,18 +24,18 @@ public class UserController {
         return userService.getAllUsers();
     }
 
-    @RequestMapping(method = RequestMethod.POST, value = "users/")
+    @RequestMapping(method = RequestMethod.POST, value = "/users/")
     public void addUser(@RequestBody User user ){
         userService.addUser(user);
     }
 
 
-    @RequestMapping(method = RequestMethod.PUT, value = "users/{id}")
+    @RequestMapping(method = RequestMethod.PUT, value = "/users/{id}")
     public void updateUser(@RequestBody User user, @PathVariable Integer id ){
         userService.updateUser(user);
     }
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "users/{id}")
+    @RequestMapping(method = RequestMethod.DELETE, value = "/users/{id}")
     public void addUser(@PathVariable Integer id ){
         userService.deleteUser(id);
     }

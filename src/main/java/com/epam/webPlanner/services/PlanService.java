@@ -2,13 +2,14 @@ package com.epam.webPlanner.services;
 
 import com.epam.webPlanner.beans.Plan;
 import com.epam.webPlanner.repositories.PlanRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 @Service
 public class PlanService {
-
+    @Autowired
     private PlanRepository planRepository;
 
     public List<Plan> getAllPlansForUser(Integer userId){
